@@ -64,7 +64,8 @@ function App() {
 function handleLogout() {
     window.sessionStorage.clear();
     setToken(null);
-    window.location.reload();
+    
+    window.location.href = "https://evilavasconcelos.github.io/implementacao-oauth2.0/";
   }
 
   return (
