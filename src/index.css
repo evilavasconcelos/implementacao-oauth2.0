@@ -18,10 +18,10 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  place-items: center; /* Centraliza vertical e horizontalmente */
+  place-items: center; 
   justify-content: center;
   min-width: 320px;
-  min-height: 100vh; /* Garante que ocupa a altura total da tela */
+  min-height: 100vh; 
 }
 
 #root {
@@ -36,5 +36,5 @@ body {
 }
 
 button {
-  cursor: pointer; /* Garante a mãozinha em todos os botões */
+  cursor: pointer;
 }
