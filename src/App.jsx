@@ -61,10 +61,10 @@ function App() {
     redirectToAuthCodeFlow(import.meta.env.VITE_CLIENT_ID);
   }
 
-  function handleLogout() {
+function handleLogout() {
     window.sessionStorage.clear();
     setToken(null);
-    window.location.href = "/";
+    window.location.href = window.location.pathname;
   }
 
   return (
