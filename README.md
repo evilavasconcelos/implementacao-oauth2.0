@@ -1,7 +1,7 @@
 # Implementação de OAuth 2.0 com PKCE (Spotify)
 
 Trabalho prático da disciplina de **Segurança**.
-Este projeto implementa uma *Single Page Application* (SPA) segura que interage com a API do Spotify utilizando o fluxo **Authorization Code com PKCE**, sem uso de backend.
+Este projeto implementa uma *Single Page Application* (SPA) segura que interage com a API do Spotify utilizando o fluxo **Authorization Code com PKCE**.
 
 ##  Equipe
 * **Évila Maria Vasconcelos de Araújo** (554162)
