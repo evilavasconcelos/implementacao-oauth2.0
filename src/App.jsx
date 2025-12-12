@@ -64,7 +64,7 @@ function App() {
 function handleLogout() {
     window.sessionStorage.clear();
     setToken(null);
-    window.location.href = window.location.pathname;
+    window.location.reload();
   }
 
   return (
