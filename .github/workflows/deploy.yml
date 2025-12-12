@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install and Build 🔧
+        run: |
+          npm install
+          npm run build
+        env:
+          # Injeção de Variáveis de Ambiente Seguras [cite: 47]
+          # O VITE_CLIENT_ID virá dos Secrets do GitHub
+          VITE_CLIENT_ID: ${{ secrets.VITE_CLIENT_ID }}
+          # URL final do seu site no GitHub Pages
+          VITE_REDIRECT_URI: ${{ secrets.VITE_REDIRECT_URI }}
+          # Endpoints fixos podem ficar aqui ou no .env, mas aqui garante a injeção
+          VITE_AUTH_ENDPOINT: "https://accounts.spotify.com/authorize"
+          VITE_TOKEN_ENDPOINT: "https://accounts.spotify.com/api/token"
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
